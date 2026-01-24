@@ -24,6 +24,7 @@
  *      - Kyun-J (https://github.com/Kyun-J)
  *      - luukjp (https://github.com/luukjp)
  *      - Lorenzo Rizzotti (https://github.com/Dreaming-Codes) 
+ *      - Christopher Lentocha (https://github.com/CE1CECL) 
  *  - Repository: https://github.com/kernelwernel/VMAware
  *  - Docs: https://github.com/kernelwernel/VMAware/docs/documentation.md
  *  - Full credits: https://github.com/kernelwernel/VMAware#credits-and-contributors-%EF%B8%8F
@@ -229,6 +230,14 @@
     #ifndef WIN32_LEAN_AND_MEAN
         #define WIN32_LEAN_AND_MEAN
     #endif
+    #ifdef _WIN32_WINNT
+        #undef _WIN32_WINNT
+    #endif
+    #ifdef WINVER
+        #undef WINVER
+    #endif
+    #define _WIN32_WINNT 0x0601
+    #define WINVER 0x0601
     
     #define WINDOWS 1
     #define LINUX 0
